@@ -1,0 +1,5 @@
+Geolocation cleaning steps
+1. Remove duplicate records 1173 duplicate records dropped 8000-1173=6827
+2. Filter: (event!=normal,event_ind=1,idling_ind=1) 60/6827 changed event as normal events because velocity is 0 and idling_ind is 1
+3. Filter: (event!=normal,event_ind=0,idling_ind=1)  1/6827 changed event as normal because velocity is 0 and idling_ind is 1
+4. Filter: (event!=normal,event_ind=0,idling_ind=0)  5/6827 changed event_ind as 1 because velocity is not 0 and idling_ind is not 1
